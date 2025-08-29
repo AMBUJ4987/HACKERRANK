@@ -1,0 +1,10 @@
+def closestNumber(a, b, x):
+    v = int(pow(a, b))
+    l = (v // x) * x
+    h = l + x
+    if abs(v - l) < abs(v - h):
+        return l
+    elif abs(v - l) > abs(v - h):
+        return h
+    else:
+        return h 
