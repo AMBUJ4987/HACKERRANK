@@ -1,0 +1,6 @@
+def strangeGrid(r, c):
+    base = ((r - 1) // 2) * 10
+    if r % 2 == 1:  
+        return base + (c - 1) * 2
+    else:  
+        return base + (c - 1) * 2 + 1
