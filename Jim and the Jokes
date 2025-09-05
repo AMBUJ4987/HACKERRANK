@@ -1,0 +1,24 @@
+def convert_to_value(day, base):
+    if base < 2:
+        return None
+    digits = list(map(int, str(day)))
+    if any(d >= base for d in digits):
+        return None
+
+    val = 0
+    for d in digits:
+        val = val * base + d
+    return val
+
+def solve(dates):
+    values = []
+    for m, d in dates:
+        value = convert_to_value(d, m)
+        if value is not None:
+            values.append(value)
+
+    freq = Counter(values)
+    jokes = 0
+    for f in freq.values():
+        jokes += f * (f - 1) // 2
+    return jokes
