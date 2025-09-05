@@ -1,0 +1,17 @@
+
+def pylons(k, arr):
+    n = len(arr)
+    count = 0
+    i = 0
+
+    while i < n:
+        pos = min(i + k - 1, n - 1)
+        while pos >= i - k + 1 and pos >= 0 and arr[pos] == 0:
+            pos -= 1
+        
+        if pos < 0 or pos < i - k + 1:   
+            return -1
+        
+        count += 1
+        i = pos + k   
+    return count
