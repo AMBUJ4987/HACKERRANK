@@ -1,0 +1,5 @@
+def organizingContainers(boxes):
+    n = len(boxes)
+    row_sums = [sum(r) for r in boxes]
+    col_sums = [sum(boxes[i][j] for i in range(n)) for j in range(n)]
+    return "Possible" if sorted(row_sums) == sorted(col_sums) else "Impossible"
