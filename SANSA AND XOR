@@ -1,0 +1,9 @@
+def sansaXor(arr):
+    n = len(arr)
+    if n % 2 == 0:
+        return 0
+    else:
+        result = 0
+        for i in range(0, n, 2):  # XOR only even indices
+            result ^= arr[i]
+        return result
