@@ -1,0 +1,21 @@
+
+def encryption(s):
+    s = s.replace(" ", "")
+    length = len(s)
+
+    sqrt_len = math.sqrt(length)
+    rows = math.floor(sqrt_len)
+    cols = math.ceil(sqrt_len)
+    if rows * cols < length:
+        rows += 1
+
+    result = []
+    for c in range(cols):
+        word = []
+        for r in range(rows):
+            idx = r * cols + c
+            if idx < length:
+                word.append(s[idx])
+        result.append("".join(word))
+    
+    return " ".join(result)
