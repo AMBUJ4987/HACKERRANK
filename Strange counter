@@ -1,0 +1,7 @@
+def strangeCounter(t):
+    cycle_len = 3
+    start = 1
+    while t > start + cycle_len - 1:
+        start += cycle_len
+        cycle_len *= 2
+    return cycle_len - (t - start)
