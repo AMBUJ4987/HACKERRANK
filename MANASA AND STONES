@@ -1,0 +1,7 @@
+
+def stones(n, a, b):
+    results = set()
+    for i in range(n):
+        total = i * b + (n - 1 - i) * a
+        results.add(total)
+    return sorted(results)
