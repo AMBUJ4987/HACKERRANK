@@ -1,0 +1,20 @@
+from collections import defaultdict
+
+t = int(input())
+
+for _ in range(t):
+    n, k = map(int, input().split())
+    a = list(map(int, input().split()))
+
+    freq = defaultdict(int)
+    freq[0] = 1
+    s = 0
+    ans = 0
+
+    for x in a:
+        s += x
+        r = s % k
+        ans += freq[r]
+        freq[r] += 1
+
+    print(ans)
