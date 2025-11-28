@@ -1,0 +1,15 @@
+def equalStacks(h1, h2, h3):
+    h1 = h1[::-1]
+    h2 = h2[::-1]
+    h3 = h3[::-1]
+
+    s1, s2, s3 = sum(h1), sum(h2), sum(h3)
+
+    while not (s1 == s2 == s3):
+        if s1 >= s2 and s1 >= s3:
+            s1 -= h1.pop()
+        elif s2 >= s1 and s2 >= s3:
+            s2 -= h2.pop()
+        else:
+            s3 -= h3.pop()
+    return s1
